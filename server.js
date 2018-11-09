@@ -1,4 +1,5 @@
 const express = require("express");
+const utils = require("./src/bodyIsEmpty.js");
 const app = express();
 const port = 3001;
 
@@ -38,12 +39,14 @@ app.get("/dado/:caras", (req, res) => {
 });
 
 app.post("/users", (req, res) => {
-    const newUser = req.body;
-    console.log(newUser);
-    newUser.id = Math.round(Math.random() * 1000000 + 1);
-
-    users.push(newUser);
-    res.json(newUser);
+    if (utils.bodyIsEmpty(req.body)) {
+        res.status(400).send("Oops, you have to pass something as Body");
+    } else {
+        const newUser = req.body;
+        newUser.id = Math.round(Math.random() * 1000000 + 1);
+        users.push(newUser);
+        res.json(newUser);
+    }
 });
 
 app.listen(port, () => {
