@@ -2,16 +2,19 @@ const express = require("express");
 const app = express();
 const port = 3001;
 
+// this allows express to get body info for POST requests
+app.use(express.json());
+
 const users = [{ name: "Alber", id: 1 }, { name: "Juan", id: 2 }];
 
 app.get("/", (req, res) => {
-    console.log("Request:", req);
+    //console.log("Request:", req);
     res.send("Hey!");
     //res.json(users);
 });
 
 app.get("/users", (req, res) => {
-    console.log("Request:", req);
+    //console.log("Request:", req);
     res.json(users);
 });
 
@@ -32,6 +35,15 @@ app.get("/dado/:caras", (req, res) => {
     };
 
     res.json(result);
+});
+
+app.post("/users", (req, res) => {
+    const newUser = req.body;
+    console.log(newUser);
+    newUser.id = Math.round(Math.random() * 1000000 + 1);
+
+    users.push(newUser);
+    res.json(newUser);
 });
 
 app.listen(port, () => {
