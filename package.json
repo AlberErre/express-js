@@ -1,0 +1,22 @@
+{
+  "name": "express-js-albererre",
+  "version": "1.0.0",
+  "description": "playing around with nodejs and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlberErre/express-js.git"
+  },
+  "author": "Alber Erre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlberErre/express-js/issues"
+  },
+  "homepage": "https://github.com/AlberErre/express-js#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
