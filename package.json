@@ -4,7 +4,8 @@
   "description": "playing around with nodejs and express",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/AlberErre/express-js#readme",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
   }
 }

@@ -6,7 +6,7 @@ const users = [{ name: "Alber", id: 1 }, { name: "Juan", id: 2 }];
 
 app.get("/", (req, res) => {
     console.log("Request:", req);
-    res.send("Hola!");
+    res.send("Hey!");
     //res.json(users);
 });
 
