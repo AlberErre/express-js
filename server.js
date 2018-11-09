@@ -21,6 +21,19 @@ app.get("/users/:id", (req, res) => {
     res.json(user);
 });
 
+app.get("/dado/:caras", (req, res) => {
+    const numFaces = req.params.caras;
+    let faces = numFaces - 1;
+    let number = Math.round(Math.random() * faces + 1);
+    let time = new Date();
+    let result = {
+        result: number,
+        time: time.toLocaleDateString("en-US")
+    };
+
+    res.json(result);
+});
+
 app.listen(port, () => {
     console.log("Express running on port 3001.");
 });
