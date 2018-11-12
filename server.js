@@ -1,5 +1,4 @@
 const express = require("express");
-const utils = require("./src/bodyIsEmpty.js");
 const app = express();
 const port = 3001;
 
